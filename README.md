@@ -1,0 +1,2 @@
+# -FaceRecognitionKivy
+使用kivy创建软件界面系统和ageitgey的face_recognition算法，实现人脸识别系统，支持人员的添加和删除，并且添加数据库图片在线更新算法
