@@ -1,10 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="07dceeff-9b7c-493f-ad53-7f13fbc9de09" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/cache/interpreter.text" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-    </list>
+    <list default="true" id="07dceeff-9b7c-493f-ad53-7f13fbc9de09" name="Default" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -101,7 +98,7 @@
         <entry file="file://$PROJECT_DIR$/cache/interpreter.text">
           <provider selected="true" editor-type-id="text-editor">
             <state>
-              <caret column="19" selection-start-column="19" selection-end-column="19" />
+              <caret column="17" selection-start-column="17" selection-end-column="17" />
             </state>
           </provider>
         </entry>
@@ -334,21 +331,41 @@
       <option name="project" value="LOCAL" />
       <updated>1536073124583</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="添加缓存文件夹">
+      <created>1536073416807</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1536073416807</updated>
+    </task>
+    <task id="LOCAL-00004" summary="添加图片">
+      <created>1536073538549</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1536073538549</updated>
+    </task>
+    <task id="LOCAL-00005" summary="添加缓存文件夹">
+      <created>1536073612649</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1536073612650</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1295" height="695" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
       <window_info anchor="bottom" id="Database Changes" order="7" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Version Control" order="7" weight="0.37634408" />
+      <window_info active="true" anchor="bottom" id="Version Control" order="7" visible="true" weight="0.4749104" />
       <window_info anchor="bottom" id="Python Console" order="7" weight="0.36135957" />
-      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.40860215" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.40860215" />
       <window_info anchor="bottom" id="Terminal" order="7" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.19482619" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.19482619" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="right" id="Database" order="3" />
       <window_info anchor="right" id="SciView" order="3" weight="0.32983023" />
@@ -377,12 +394,40 @@
       </list>
     </option>
   </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="RECENTLY_FILTERED_USER_GROUPS">
+                <collection />
+              </option>
+              <option name="RECENTLY_FILTERED_BRANCH_GROUPS">
+                <collection />
+              </option>
+              <option name="COLUMN_ORDER">
+                <list>
+                  <option value="0" />
+                  <option value="1" />
+                  <option value="2" />
+                  <option value="3" />
+                </list>
+              </option>
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="修改face.kv文件中，从删除界面无法切换到recognition_interface界面的额问题" />
-    <option name="LAST_COMMIT_MESSAGE" value="修改face.kv文件中，从删除界面无法切换到recognition_interface界面的额问题" />
+    <MESSAGE value="添加图片" />
+    <MESSAGE value="添加缓存文件夹" />
+    <option name="LAST_COMMIT_MESSAGE" value="添加缓存文件夹" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/开发记录">
@@ -680,7 +725,7 @@
     <entry file="file://$PROJECT_DIR$/cache/interpreter.text">
       <provider selected="true" editor-type-id="text-editor">
         <state>
-          <caret column="19" selection-start-column="19" selection-end-column="19" />
+          <caret column="17" selection-start-column="17" selection-end-column="17" />
         </state>
       </provider>
     </entry>
