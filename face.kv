@@ -1,0 +1,454 @@
+
+#: import ListAdapter kivy.adapters.listadapter.ListAdapter
+#: import main main
+#: import os os
+
+FaceRoot:
+
+
+
+
+<FaceRoot>:
+    carousel: carousel
+
+    add_members_file: add_members_file
+    add_members_camera: add_members_camera
+
+    delete_members: delete_members
+
+    recognition_interface: recognition_interface
+
+    BoxLayout:
+        orientation: 'vertical'
+        ActionBar:
+            ActionView:
+                use_separator:  True
+                ActionPrevious:
+                    title: "face recognition"
+                    with_previous: False
+                ActionButton:
+                    text: "picture form"
+                    font_name: './font/UbuntuMono-RI'
+                    on_press: app.root.camera_recognition_start()
+
+                ActionButton:
+                    text: "video form"
+                    font_name: './font/UbuntuMono-RI'
+                    on_press: print(self.state)
+
+                ActionButton:
+                    text: "add members"
+                    font_name:'./font/UbuntuMono-RI'
+                    on_press: app.root.show_load_data_choices()
+                ActionButton:
+                    text: "delete members"
+                    font_name: './font/UbuntuMono-RI'
+                    on_press: app.root.carousel.load_slide(app.root.delete_members)
+        Carousel:
+            id: carousel
+            RecogitionInterface:
+                id: recognition_interface
+            AddMembersFromFile:
+                id: add_members_file
+            AddMembersFromCamera:
+                id: add_members_camera
+            DeleteMembers:
+                id: delete_members
+
+
+
+
+
+<AddDataMethod>:
+    title: 'How To Load Data'
+
+    separator_height: dp(1)
+    size_hint: (0.4, 0.4)
+    auto_dismiss: True
+    BoxLayout:
+        orientation: 'vertical'
+        Label:
+            # there is nothing for now
+        BoxLayout:
+            padding: dp(4)
+            spacing: dp(10)
+            size_hint_y: None
+            height: dp(40)
+            Button:
+                text: 'Loading from file'
+                font_name:'./font/UbuntuMono-RI'
+                on_press: app.root.carousel.load_slide(app.root.add_members_file); root.dismiss()
+            Button:
+                text: 'Load from camera'
+                font_name:'./font/UbuntuMono-RI'
+                on_press: app.root.carousel.load_slide(app.root.add_members_camera); root.dismiss()
+
+
+
+
+<PopDelete>:
+    title: 'Delete Person Popup'
+    separator_height: dp(1)
+    size_hint: (0.6, 0.6)
+    auto_dismiss: False
+    GridLayout:
+        rows: 5
+        cols: 1
+        orientation: 'vertical'
+        BoxLayout:
+            size_hint_y: 1
+            Image:
+                source:app.root.del_members_inform[2]
+            Label:
+                size_hint_x: 0.5
+                text: app.root.del_members_inform[0]
+                font_name:'./font/UbuntuMono-RI'
+        Label:
+            canvas.before:
+                Color:
+                    rgba: [47 / 255., 167 / 255., 212 / 255., 1.]
+                Rectangle:
+                    size: (self.width - 12, self.height)
+                    pos: (self.x + 5, self.y)
+            size_hint_y: None
+            height: 1
+
+        Label:
+            size_hint_y: 0.2
+            text: 'delete this person from database ?'
+
+        BoxLayout:
+            padding: dp(4)
+            size_hint_y: 0.2
+            spacing: dp(10)
+            Button:
+                text: 'ok'
+                background_color: (0.094, 0.427, 1, 1.0)
+                on_press: app.root.pop_person_from_database(app.root.del_members_inform)
+            Button:
+                text: 'cancel'
+                on_press: root.dismiss()
+
+
+<LocationButton>:
+    size_hint_y: None
+    height: '104dp'
+    on_press: app.root.show_pop_inform(root.del_peo_information)
+    deselected_color: (0.745, 0.753, 0.792, 1.0)
+    selected_color: (0.745, 0.753, 0.792, 1.0)
+
+    BoxLayout:
+    # add this to improve situations
+        pos: self.parent.pos
+        size: self.parent.size
+
+        Image:
+            source: root.del_peo_information[2]
+            size_hint_x: None
+            width: 101
+        Label:
+            text: 'Name: {}      ID: {}'.format(root.del_peo_information[0], root.del_peo_information[1])
+
+
+
+
+
+<DeleteMembers>:
+    search_input: search_input
+    search_results_list: search_results_list
+    BoxLayout:
+        orientation: 'vertical'
+        BoxLayout:
+            size_hint_y: None
+            height: '40dp'
+            spacing: dp(1)
+            padding: dp(1)
+            TextInput:
+                id: search_input
+                size_hint_x: 1
+                focus: True
+                # multiline: False
+                hint_text: 'Enter a Name or ID'
+                padding: dp(10), dp(10), 0, 0
+                # this is not used
+                # on_text_validate: app.root.search_results()
+            Button:
+                text: 'Name search'
+                size_hint_x: 0.2
+                on_press: app.root.Name_search_results()
+            Button:
+                text: 'ID search'
+                size_hint_x: 0.2
+                on_press: app.root.ID_search_results()
+            Button:
+                text: 'Clear Input'
+                size_hint_x: 0.2
+                on_press: search_input.text = ''
+
+        ListView:
+
+            id: search_results_list
+            adapter:
+                ListAdapter(data=[], cls=main.LocationButton, args_converter=main.image_args_converter)
+
+
+
+
+
+<AddMembersFromFile>:
+
+    text_input: text_input
+    BoxLayout:
+        orientation: 'vertical'
+        BoxLayout:
+            size_hint_y: None
+            height: dp(40)
+            spacing: dp(3)
+            padding: dp(5)
+            TextInput:
+                id: text_input
+
+                hint_text: 'F:/Python_projects/'
+            Button:
+                size_hint_x: None
+                width: dp(40)
+                text: '...'
+                on_press: app.root.show_choose_file_popup()
+        BoxLayout:
+
+        BoxLayout:
+            padding: dp(5)
+            size_hint_y: None
+            height: 40
+            Button:
+                size_hint_x: None
+                width: dp(60)
+                text: 'exit'
+                on_press: app.root.carousel.load_slide(app.root.recognition_interface)
+            Label:
+
+            Button:
+
+                size_hint_x: None
+                background_color: (0.094, 0.427, 1, 1.0)
+                width: dp(60)
+                text: "load"
+                on_press: app.root.load_data_from_file(root.text_input.text); app.root.carousel.load_slide(app.root.recognition_interface)
+
+
+<DirectoryButton>:
+    text: self.directory_pos
+    size_hint_y: None
+    height: "40dp"
+    selected_color: (0.745, 0.753, 0.792, 1.0)
+    deselected_color: (0.745, 0.753, 0.792, 1.0)
+    on_press: app.root.drive_selection_changed(self.directory_pos)
+
+<ChooseFilePopup>:
+    id: choose_file_popup
+    drives_list: drives_list
+    file_chooser: file_chooser
+    title: 'Delete Person Popup'
+    separator_height: dp(1)
+    size_hint: (0.9, 0.9)
+    auto_dismiss: False
+    BoxLayout:
+        orientation: 'vertical'
+        BoxLayout:
+            ListView:
+                id: drives_list
+                adapter:
+                    ListAdapter(data=[], selection_mode='single',
+                    allow_empty_selection=False, cls=main.DirectoryButton,
+                    args_converter=main.directory_args_converter)
+            FileChooserListView:
+                id: file_chooser
+                dirselect: True
+        BoxLayout:
+            size_hint_y: None
+            height: dp(30)
+            Button:
+                text: "Cancel"
+                on_release: root.dismiss()
+
+            Button:
+                text: "Load"
+                on_release: app.root.load_file(file_chooser.path, file_chooser.selection); root.dismiss()
+
+
+<AddMembersFromCamera>:
+    text_input_camera: text_input_camera
+    image: image
+    camera_load: camera_load
+    BoxLayout:
+        orientation: 'vertical'
+        canvas.before:
+            Color:
+                rgba: 0.584, 0.604, 0.608, 1
+            Rectangle:
+                size: self.size
+                pos: self.pos
+        BoxLayout:
+            size_hint_y: None
+            height: dp(40)
+
+            BoxLayout:
+                padding: dp(4)
+                spacing: dp(8)
+                TextInput:
+                    id: text_input_camera
+                    size_hint_x: 1
+                    focus: True
+                    multiline: False
+                    hint_text: 'Enter the name and id, In the form of <name+d>'
+                    font_name: './font/UbuntuMono-RI'
+                    hint_text_color: [0.941, 0.451, 0.349, 1.]
+                    padding: dp(10), dp(10), 0, 0
+                Button:
+                    size_hint_x: 0.1
+                    text: 'ok'
+                    on_press: app.root.camera_load_data_start()
+                Button:
+                    size_hint_x: 0.1
+                    text: 'Clear'
+                    on_press: text_input_camera.text=''
+
+        BoxLayout:
+
+            BoxLayout:
+
+                orientation: "vertical"
+
+
+
+                Label:
+                    height: 40
+                    size_hint_y: None
+                    text: 'Video player'
+                    font_name:'./font/UbuntuMono-RI'
+                Label:
+                    canvas.before:
+                        Color:
+                            rgba: [0.918, 0.643, 0.949, 1.]
+                        Rectangle:
+                            size: (self.width - 12, self.height)
+                            pos: (self.x + 5, self.y)
+                    size_hint_y: None
+                    height: 1
+                CameraLoadData:
+                    id: camera_load
+                    canvas.before:
+                        Color:
+                            rgba: [0.431, 0.439, 0.431, 1.]
+                        Rectangle:
+                            size: (self.width, self.height)
+                            pos: (self.x, self.y)
+                        # pos: self.pos
+                    #resolution: (640, 480)
+
+                BoxLayout:
+                    padding: dp(3)
+                    orientation: "horizontal"
+                    height: dp(40)
+                    size_hint_y: None
+
+                    Label:
+                        size_hint: 0.5,1
+
+                    Button:
+                        text: 'capture'
+                        size_hint: 0.5, 1
+                        on_press: camera_load.export_to_png("./cache/{}.jpg".format(text_input_camera.text)); image.source = "./cache/{}.jpg".format(text_input_camera.text)
+                    Label:
+                        size_hint: 0.5,1
+
+            Label:
+                size_hint_x: None
+                width: dp(2)
+                canvas.before:
+                    Color:
+                        rgba: [47 / 255., 167 / 255., 212 / 255., 1.]
+                    Rectangle:
+                        size: (self.width, self.height)
+                        pos: (self.x, self.y + 5)
+
+            BoxLayout:
+                orientation: 'vertical'
+                Label:
+                    height: 40
+                    size_hint_y: None
+                    text: 'Picture Captured'
+                    font_name:'./font/UbuntuMono-RI'
+                Label:
+                    canvas.before:
+                        Color:
+                            rgba: [0.918, 0.643, 0.949, 1.]
+                        Rectangle:
+                            size: (self.width - 12, self.height)
+                            pos: (self.x + 5, self.y)
+                    size_hint_y: None
+                    height: 1
+
+                Image:
+                    canvas.before:
+                        Color:
+                            rgba: [1., 1., 1., 1.]
+                        Rectangle:
+                            size: (self.width, self.height)
+                            pos: (self.x, self.y)
+                        # pos: self.pos
+                    id: image
+
+                BoxLayout:
+                    padding: dp(3)
+                    spacing: dp(5)
+                    size_hint_y: None
+                    height: dp(40)
+                    Button:
+                        text: 'Load'
+                        on_press: app.root.load_data_camera(text_input_camera.text)
+                    Button:
+                        text: 'Cancel'
+                        on_press: os.remove("./cache/{}.jpg".format(text_input_camera.text)); image.source = ""
+
+                    Button:
+                        text: 'exit'
+                        # back to picture form (default)
+                        on_press: app.root.carousel.load_slide(app.root.recognition_interface);app.root.doexit()
+
+
+<Warning>:
+    title: 'Error Information'
+    title_font: './font/UbuntuMono-RI'
+    separator_height: dp(1)
+    size_hint: (0.3, 0.3)
+    auto_dismiss: True
+    BoxLayout:
+        orientation: 'vertical'
+        Label:
+            text: 'Format error'
+        BoxLayout:
+            size_hint_y: None
+            height: dp(30)
+            Label:
+            Button:
+                size_hint_x: None
+                width: dp(50)
+                background_color: (0.733, 0.898, 0.949, 1)
+
+                text: 'ok'
+                on_press: root.dismiss()
+
+<RecogitionInterface@BoxLayout>:
+    camera_recognition: camera_recognition
+    BoxLayout:
+        canvas.before:
+            Color:
+                rgba: 0.584, 0.604, 0.608, 1
+            Rectangle:
+                size: self.size
+                pos: self.pos
+        CameraFaceRecognition:
+            id: camera_recognition
+
+
