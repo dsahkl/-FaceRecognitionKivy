@@ -27,14 +27,9 @@ FaceRoot:
                     title: "face recognition"
                     with_previous: False
                 ActionButton:
-                    text: "picture form"
+                    text: "recognition interface"
                     font_name: './font/UbuntuMono-RI'
-                    on_press: app.root.camera_recognition_start()
-
-                ActionButton:
-                    text: "video form"
-                    font_name: './font/UbuntuMono-RI'
-                    on_press: print(self.state)
+                    on_press: app.root.carousel.load_slide(app.root.recognition_interface);app.root.camera_recognition_start()
 
                 ActionButton:
                     text: "add members"
