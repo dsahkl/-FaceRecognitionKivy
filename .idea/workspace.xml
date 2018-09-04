@@ -2,14 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="07dceeff-9b7c-493f-ad53-7f13fbc9de09" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cache/interpreter.text" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/Aaron_Eckhart+0001/Aaron_Eckhart+0001+1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/Aaron_Eckhart+0001/Aaron_Eckhart+0001+2.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/Aaron_Guiel+0003/Aaron_Guiel+0003+1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/face.kv" beforeDir="false" afterPath="$PROJECT_DIR$/face.kv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/image_data.json" beforeDir="false" afterPath="$PROJECT_DIR$/image_data.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/person_number_dictionary_used_ID.pickle" beforeDir="false" afterPath="$PROJECT_DIR$/person_number_dictionary_used_ID.pickle" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -31,7 +25,7 @@
         <entry file="file://$PROJECT_DIR$/main.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="294">
-              <caret line="159" lean-forward="true" selection-start-line="159" selection-end-line="159" />
+              <caret line="159" selection-start-line="159" selection-end-line="159" />
               <folding>
                 <element signature="e#0#44#0" expanded="true" />
               </folding>
@@ -94,11 +88,20 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="face.kv" pinned="false" current-in-tab="true">
+      <file leaf-file-name="face.kv" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/face.kv">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="116">
-              <caret line="29" column="48" selection-start-line="29" selection-start-column="48" selection-end-line="29" selection-end-column="48" />
+            <state relative-caret-position="126">
+              <caret line="24" selection-start-line="24" selection-end-line="24" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="interpreter.text" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/cache/interpreter.text">
+          <provider selected="true" editor-type-id="text-editor">
+            <state>
+              <caret column="19" selection-start-column="19" selection-end-column="19" />
             </state>
           </provider>
         </entry>
@@ -140,6 +143,7 @@
     </findStrings>
   </component>
   <component name="Git.Settings">
+    <option name="UPDATE_TYPE" value="MERGE" />
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="IdeDocumentHistory">
@@ -152,6 +156,7 @@
         <option value="$PROJECT_DIR$/test_face.py" />
         <option value="$PROJECT_DIR$/main.py" />
         <option value="$PROJECT_DIR$/face.kv" />
+        <option value="$PROJECT_DIR$/cache/interpreter.text" />
       </list>
     </option>
   </component>
@@ -181,6 +186,11 @@
             <path>
               <item name="APPFace" type="b2602c69:ProjectViewProjectNode" />
               <item name="APPFace" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="APPFace" type="b2602c69:ProjectViewProjectNode" />
+              <item name="APPFace" type="462c0819:PsiDirectoryNode" />
+              <item name="cache" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -310,19 +320,35 @@
       <option name="presentableId" value="Default" />
       <updated>1534992644100</updated>
     </task>
+    <task id="LOCAL-00001" summary="修改face.kv文件中，从删除界面无法切换到recognition_interface界面的额问题">
+      <created>1536072638232</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1536072638232</updated>
+    </task>
+    <task id="LOCAL-00002" summary="修改face.kv文件中，从删除界面无法切换到recognition_interface界面的额问题">
+      <created>1536073124583</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1536073124583</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1295" height="695" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
       <window_info anchor="bottom" id="Database Changes" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="7" weight="0.37634408" />
       <window_info anchor="bottom" id="Python Console" order="7" weight="0.36135957" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.40860215" />
+      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.40860215" />
       <window_info anchor="bottom" id="Terminal" order="7" />
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.19482619" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.19482619" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="right" id="Database" order="3" />
       <window_info anchor="right" id="SciView" order="3" weight="0.32983023" />
@@ -354,17 +380,11 @@
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
   </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="修改face.kv文件中，从删除界面无法切换到recognition_interface界面的额问题" />
+    <option name="LAST_COMMIT_MESSAGE" value="修改face.kv文件中，从删除界面无法切换到recognition_interface界面的额问题" />
+  </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/load_data.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="969">
-          <caret line="64" column="14" selection-start-line="64" selection-start-column="14" selection-end-line="64" selection-end-column="14" />
-          <folding>
-            <element signature="e#0#9#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/开发记录">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="170">
@@ -643,7 +663,7 @@
     <entry file="file://$PROJECT_DIR$/main.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="294">
-          <caret line="159" lean-forward="true" selection-start-line="159" selection-end-line="159" />
+          <caret line="159" selection-start-line="159" selection-end-line="159" />
           <folding>
             <element signature="e#0#44#0" expanded="true" />
           </folding>
@@ -652,8 +672,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/face.kv">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="116">
-          <caret line="29" column="48" selection-start-line="29" selection-start-column="48" selection-end-line="29" selection-end-column="48" />
+        <state relative-caret-position="126">
+          <caret line="24" selection-start-line="24" selection-end-line="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cache/interpreter.text">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="19" selection-start-column="19" selection-end-column="19" />
         </state>
       </provider>
     </entry>
