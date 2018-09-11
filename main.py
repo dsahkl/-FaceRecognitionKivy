@@ -1,22 +1,21 @@
-from kivy.uix.listview import ListItemButton
-from kivy.storage.jsonstore import JsonStore
-from kivy.utils import platform
-import load_data
-from kivy.properties import ObjectProperty
+import collections
+import os
+import pickle
+
+import cv2
+import face_recognition
 from kivy.app import App
-from kivy.uix.image import Image
 from kivy.clock import Clock
 from kivy.graphics.texture import Texture
+from kivy.properties import ObjectProperty
+from kivy.storage.jsonstore import JsonStore
 from kivy.uix.boxlayout import BoxLayout
-import cv2
-import os
+from kivy.uix.image import Image
+from kivy.uix.listview import ListItemButton
 from kivy.uix.popup import Popup
-import pickle
-import face_recognition
-import collections
+from kivy.utils import platform
 
-
-
+import load_data
 
 
 def directory_args_converter(index, data_item):
@@ -324,7 +323,7 @@ class CameraFaceRecognition(Image):
             # 继续修改 2018 09 03  将数据提取出来使用的
             names = []
             for face_encoding in face_encodings:
-                matches = face_recognition.compare_faces(self.__embedding, face_encoding)
+                matches = face_recognition.compare_faces(self.__embedding, face_encoding, tolerance=0.45)
                 name = 'Unknown'
                 if True in matches:
                     matchedIdex = [i for (i, b) in enumerate(matches) if b]
@@ -337,6 +336,9 @@ class CameraFaceRecognition(Image):
                         counts[name_id] += 1
 
                     name = max(counts, key=counts.get)
+                    # 大于三张匹配才行
+                    if counts[name] < 3:
+                        name = 'Unknown'
                 names.append(name)
             for ((top, right, bottom, left), name) in zip(face_locations, names):
             #     cv2.rectangle(rgb_frame, (left, top), (right, bottom), (0, 0, 255), 2)
